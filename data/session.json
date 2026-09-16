@@ -1,0 +1,266 @@
+{
+  "appName": "MulticamSync",
+  "project": {
+    "folder": "C:\\Users\\alt99\\Documents\\Codex\\2026-09-15\\r\\outputs\\MulticamSync_Windows - github\\multi-cam sample video\\Three_CAM",
+    "cameras": [
+      {
+        "id": "cam-1",
+        "name": "CAM A",
+        "color": "#54d8c3",
+        "offset": 0.0
+      },
+      {
+        "id": "cam-2",
+        "name": "CAM B",
+        "color": "#8aabff",
+        "offset": 0.0
+      },
+      {
+        "id": "cam-3",
+        "name": "CAM C",
+        "color": "#f9bd66",
+        "offset": 0.0
+      }
+    ],
+    "clips": [
+      {
+        "id": "12f8816598b44488",
+        "path": "C:\\Users\\alt99\\Documents\\Codex\\2026-09-15\\r\\outputs\\MulticamSync_Windows - github\\multi-cam sample video\\Three_CAM\\CAM_A.MP4",
+        "name": "CAM_A.MP4",
+        "start": 0.88675,
+        "autoStart": 0.88675,
+        "duration": 39.005625,
+        "fps": 59.94004606705315,
+        "width": 1920,
+        "height": 1080,
+        "hasAudio": true,
+        "audioChannels": 2,
+        "timecode": null,
+        "timecodeSeconds": null,
+        "timestamp": 1789493833.0,
+        "timestampSource": "metadata",
+        "creationTime": "2026-09-15T17:37:13.000000Z",
+        "codec": "hevc",
+        "rotation": 0.0,
+        "cameraId": "cam-1",
+        "sync": {
+          "method": "reference",
+          "confidence": 1.0,
+          "note": "기준 카메라 · 여러 클립 사이 간격은 촬영 시각 기준"
+        },
+        "metadataStart": 0.88675,
+        "previewReady": true
+      },
+      {
+        "id": "07a0d5603c54c4ae",
+        "path": "C:\\Users\\alt99\\Documents\\Codex\\2026-09-15\\r\\outputs\\MulticamSync_Windows - github\\multi-cam sample video\\Three_CAM\\CAM_B.MP4",
+        "name": "CAM_B.MP4",
+        "start": 4.683125,
+        "autoStart": 4.683125,
+        "duration": 30.213524,
+        "fps": 59.940044785407565,
+        "width": 1920,
+        "height": 1080,
+        "hasAudio": true,
+        "audioChannels": 2,
+        "timecode": null,
+        "timecodeSeconds": null,
+        "timestamp": 1789493722.0,
+        "timestampSource": "metadata",
+        "creationTime": "2026-09-15T17:35:22.000000Z",
+        "codec": "hevc",
+        "rotation": 0.0,
+        "cameraId": "cam-2",
+        "sync": {
+          "method": "audio",
+          "confidence": 0.99,
+          "note": "오디오 5개 구간 일치 · 초기 배치 대비 +114.796초",
+          "correction": 114.796375,
+          "evidence": {
+            "accepted": true,
+            "delta": 3.796375,
+            "confidence": 0.99,
+            "score": 0.9246,
+            "matchedWindows": 5,
+            "windows": [
+              {
+                "delta": 3.8,
+                "score": 0.9518553811020544,
+                "second": 0.39966811368183736,
+                "margin": 0.5521872674202171,
+                "targetTime": 0.0,
+                "referenceTime": 3.8
+              },
+              {
+                "delta": 3.8,
+                "score": 0.8739632849401507,
+                "second": 0.2651557198775919,
+                "margin": 0.6088075650625588,
+                "targetTime": 5.66,
+                "referenceTime": 9.46
+              },
+              {
+                "delta": 3.8,
+                "score": 0.9273529851296777,
+                "second": 0.23219009252333572,
+                "margin": 0.695162892606342,
+                "targetTime": 11.31,
+                "referenceTime": 15.11
+              },
+              {
+                "delta": 3.8,
+                "score": 0.9370982207885687,
+                "second": 0.22190150026410702,
+                "margin": 0.7151967205244617,
+                "targetTime": 16.97,
+                "referenceTime": 20.77
+              },
+              {
+                "delta": 3.8,
+                "score": 0.9326550940719587,
+                "second": 0.3042622947260972,
+                "margin": 0.6283927993458615,
+                "targetTime": 22.63,
+                "referenceTime": 26.43
+              }
+            ],
+            "rawMatches": [
+              {
+                "delta": 3.798125,
+                "score": 0.27202334643432674
+              },
+              {
+                "delta": 3.796125,
+                "score": 0.4021762269336013
+              },
+              {
+                "delta": 3.796375000000001,
+                "score": 0.13820680085333178
+              }
+            ],
+            "referenceClipId": "12f8816598b44488"
+          }
+        },
+        "metadataStart": -110.11325,
+        "previewReady": true
+      },
+      {
+        "id": "ded7b6f1a9b426bf",
+        "path": "C:\\Users\\alt99\\Documents\\Codex\\2026-09-15\\r\\outputs\\MulticamSync_Windows - github\\multi-cam sample video\\Three_CAM\\CAM_C.MP4",
+        "name": "CAM_C.MP4",
+        "start": 0.0,
+        "autoStart": 0.0,
+        "duration": 37.053681,
+        "fps": 59.940064433545174,
+        "width": 1920,
+        "height": 1080,
+        "hasAudio": true,
+        "audioChannels": 2,
+        "timecode": null,
+        "timecodeSeconds": null,
+        "timestamp": 1789493795.0,
+        "timestampSource": "metadata",
+        "creationTime": "2026-09-15T17:36:35.000000Z",
+        "codec": "hevc",
+        "rotation": 0.0,
+        "cameraId": "cam-3",
+        "sync": {
+          "method": "audio",
+          "confidence": 0.99,
+          "note": "오디오 4개 구간 일치 · 초기 배치 대비 +37.113초",
+          "correction": 37.11325,
+          "evidence": {
+            "accepted": true,
+            "delta": -0.88675,
+            "confidence": 0.99,
+            "score": 0.8973,
+            "matchedWindows": 4,
+            "windows": [
+              {
+                "delta": 10.82,
+                "score": 0.260899527631151,
+                "second": 0.24348929790398802,
+                "margin": 0.017410229727162968,
+                "targetTime": 0.0,
+                "referenceTime": 10.82
+              },
+              {
+                "delta": -0.89,
+                "score": 0.8768807503260846,
+                "second": 0.387227690330528,
+                "margin": 0.4896530599955566,
+                "targetTime": 6.94,
+                "referenceTime": 6.05
+              },
+              {
+                "delta": -0.89,
+                "score": 0.8958818833395328,
+                "second": 0.19450789198021523,
+                "margin": 0.7013739913593176,
+                "targetTime": 13.88,
+                "referenceTime": 12.99
+              },
+              {
+                "delta": -0.89,
+                "score": 0.9169863351623111,
+                "second": 0.23456298155983552,
+                "margin": 0.6824233536024755,
+                "targetTime": 20.82,
+                "referenceTime": 19.93
+              },
+              {
+                "delta": -0.89,
+                "score": 0.8994219979757503,
+                "second": 0.302505404583568,
+                "margin": 0.5969165933921823,
+                "targetTime": 27.76,
+                "referenceTime": 26.87
+              }
+            ],
+            "rawMatches": [
+              {
+                "delta": -0.887125000000001,
+                "score": 0.492048918190076
+              },
+              {
+                "delta": -0.8867500000000028,
+                "score": 0.0926097641560472
+              },
+              {
+                "delta": -0.886375000000001,
+                "score": 0.14230616808417448
+              }
+            ],
+            "referenceClipId": "12f8816598b44488"
+          }
+        },
+        "metadataStart": -37.11325,
+        "previewReady": true
+      }
+    ],
+    "warnings": [],
+    "duration": 39.892375,
+    "referenceCameraId": "cam-1",
+    "clockBasis": "timestamp",
+    "syncMethod": "auto",
+    "syncSummary": {
+      "matched": 2,
+      "targets": 2,
+      "timecode": 0,
+      "unconfirmed": 0
+    }
+  },
+  "job": {
+    "id": "972ae82637b24d4d9959d0e2377706c8",
+    "kind": "proxies",
+    "status": "done",
+    "progress": 100,
+    "message": "완료",
+    "result": {
+      "count": 3
+    },
+    "error": null
+  },
+  "exports": [],
+  "sampleFolder": "multi-cam sample video/Three_CAM"
+}

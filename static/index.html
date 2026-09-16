@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101417">
+  <title>MULTICAM SYNC · 멀티캠 싱크 스튜디오</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true"><defs>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.4"/><rect x="14" y="3" width="7" height="7" rx="1.4"/><rect x="3" y="14" width="7" height="7" rx="1.4"/><rect x="14" y="14" width="7" height="7" rx="1.4"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v2M3 7h5l2 3h12l-3 11H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 10v4m4-8v12m5-16v20m5-16v12m4-8v4"/></symbol>
+    <symbol id="i-tune" viewBox="0 0 24 24"><path d="M4 7h9m4 0h3M4 17h3m4 0h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 13 8-13 8Z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="M5 5v14m14-14L8 12l11 7Z"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M19 5v14M5 5l11 7-11 7Z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="13" rx="2"/><path d="m15 10 6-4v13l-6-4M7 3h5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-horizontal" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-vertical" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M4 12h16"/></symbol>
+    <symbol id="i-pip" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><rect x="13" y="12" width="6" height="5" rx="1"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M20 21H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h13l4 4v13a1 1 0 0 1-1 1ZM7 3v6h10V3M7 21v-8h10v8"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v2"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M10 4 5 9H2v6h3l5 5Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 8A9 9 0 1 0 21 15M20 3v6h-6"/></symbol>
+  </defs></svg>
+  <header class="app-header">
+    <a class="brand" href="/" aria-label="MULTICAM SYNC 홈"><span class="brand-icon"><svg><use href="#i-grid"/></svg></span><span>MULTICAM <b>SYNC</b><small>멀티캠 싱크 스튜디오</small></span></a>
+    <div class="header-right"><span class="local-badge"><i></i> LOCAL STUDIO</span><button id="loadProject" class="button ghost compact">프로젝트 열기</button><a href="/api/project-download" id="saveProject" class="button ghost compact"><svg><use href="#i-save"/></svg>저장</a></div>
+  </header>
+  <nav class="workflow" aria-label="작업 단계">
+    <button class="workflow-step active" data-step="1"><span class="step-no">01</span><span>폴더 불러오기<small>카메라 자동 분류</small></span><svg><use href="#i-folder"/></svg></button>
+    <span class="step-divider">›</span>
+    <button class="workflow-step" data-step="2"><span class="step-no">02</span><span>자동 싱크<small>타임코드 · 오디오 분석</small></span><svg><use href="#i-wave"/></svg></button>
+    <span class="step-divider">›</span>
+    <button class="workflow-step" data-step="3"><span class="step-no">03</span><span>수동 조정<small>프레임 단위 미세 조정</small></span><svg><use href="#i-tune"/></svg></button>
+    <span class="step-divider">›</span>
+    <button class="workflow-step" data-step="4"><span class="step-no">04</span><span>추출하기<small>통합 영상 · 개별 영상</small></span><svg><use href="#i-download"/></svg></button>
+  </nav>
+
+  <main class="studio">
+    <aside class="sources-panel panel">
+      <div class="panel-heading"><h2>미디어 소스</h2><span id="cameraCount" class="count">0 CAM</span></div>
+      <button id="openFolder" class="button primary import-button"><svg><use href="#i-folder"/></svg>촬영 폴더 불러오기</button>
+      <p class="source-hint">CAM A, CAM B… 폴더를 찾아<br>카메라별로 자동 분류합니다.</p>
+      <div id="folderInfo" class="folder-info hidden"></div>
+      <div id="sourceList" class="source-list"><div class="source-empty"><svg><use href="#i-camera"/></svg><p>카메라를 연결할 준비 완료</p><small>동시에 촬영한 영상이 있는<br>상위 폴더를 선택하세요.</small></div></div>
+      <div class="source-bottom"><span class="tiny-label">WORKFLOW TIP</span><p>같은 순간, 여러 시선.<br>소리와 타임코드로 하나의<br>타임라인을 만드세요.</p><span class="privacy"><i></i>영상은 이 컴퓨터에서 처리됩니다</span></div>
+    </aside>
+
+    <section class="center-column">
+      <div class="viewer-panel panel">
+        <div class="viewer-toolbar"><div><span class="live-dot"></span><h2>멀티뷰 프리뷰</h2><span id="previewStatus" class="subtle">미디어 대기 중</span></div><button id="fullscreen" class="icon-button" title="미리보기 전체 화면" aria-label="미리보기 전체 화면"><svg><use href="#i-expand"/></svg></button></div>
+        <div id="videoStage" class="video-stage layout-horizontal">
+          <div class="welcome-view"><div class="welcome-mark"><svg><use href="#i-grid"/></svg><span class="crosshair h"></span><span class="crosshair v"></span></div><span class="eyebrow">EVERY ANGLE. IN SYNC.</span><h1>여러 시선, 하나의 순간.</h1><p>촬영 폴더를 선택하면 카메라를 찾고<br>타임코드와 녹음된 소리로 싱크를 맞춥니다.</p><button id="welcomeFolder" class="button primary"><svg><use href="#i-folder"/></svg>폴더 선택하고 시작</button><button id="loadSample" class="text-button">Three_CAM 샘플 불러오기 <span>↗</span></button><div class="welcome-tags"><span>2개 이상 카메라</span><span>수동 싱크 조정</span><span>MP4 · ZIP 추출</span></div></div>
+        </div>
+        <div class="transport"><div class="transport-left"><button id="previousFrame" class="icon-button" aria-label="이전 프레임" title="이전 프레임 (←)"><svg><use href="#i-prev"/></svg></button><button id="playPause" class="play-button" aria-label="재생" title="재생 / 일시 정지 (Space)"><svg><use href="#i-play"/></svg></button><button id="nextFrame" class="icon-button" aria-label="다음 프레임" title="다음 프레임 (→)"><svg><use href="#i-next"/></svg></button><span id="currentTime" class="timecode">00:00:00.000</span><span class="time-divider">/</span><span id="totalTime" class="total-time">00:00:00.000</span></div><div class="transport-right"><label class="audio-select"><svg><use href="#i-volume"/></svg><select id="previewAudio" aria-label="미리보기 오디오"><option value="none">음소거</option></select></label><select id="playbackRate" class="speed-select" aria-label="재생 속도"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div></div>
+      </div>
+
+      <section class="timeline-panel panel">
+        <div class="timeline-heading"><div><h2>싱크 타임라인</h2><span class="subtle" id="timelineHint">각 카메라의 촬영 구간을 한눈에</span></div><div class="timeline-actions"><button id="fitTimeline" class="button ghost compact">전체 보기</button><button id="focusRange" class="button ghost compact">추출 구간 보기</button></div></div>
+        <div class="timeline-ruler-row"><span class="track-heading">카메라 / 오디오</span><div class="timeline-ruler" id="timelineRuler"></div></div>
+        <div id="timelineTracks" class="timeline-tracks"><div class="timeline-empty">폴더를 불러오면 싱크 타임라인이 표시됩니다.</div></div>
+        <input id="scrubber" class="scrubber" type="range" min="0" max="100" value="0" step="0.001" aria-label="전체 재생 위치">
+        <div class="timeline-bottom"><span><i class="legend-dot cyan"></i>오디오 파형 <i class="legend-dot amber"></i>추출 구간</span><span>Space 재생 / 정지<span class="shortcut-divider">·</span>← → 1프레임</span></div>
+      </section>
+      <div id="warnings" class="warnings hidden"></div>
+    </section>
+
+    <aside class="settings-panel panel">
+      <div class="settings-tabs" role="tablist" aria-label="편집 설정"><button id="syncTab" role="tab" aria-selected="true" class="selected" data-tab="sync">싱크 조정</button><button id="exportTab" role="tab" aria-selected="false" data-tab="export">배치 · 추출</button></div>
+      <div id="syncSettings" class="settings-content">
+        <section class="setting-section"><div class="section-title"><h3>자동 싱크</h3><span class="mini-tag">AUTO</span></div><p class="field-help">타임코드를 참고한 뒤 여러 오디오 구간을 비교해 싱크를 검증합니다.</p><label class="field-label" for="syncMethod">분석 방식</label><select id="syncMethod"><option value="auto">자동 선택 · 타임코드 + 오디오</option><option value="audio">오디오로 맞추기</option><option value="timecode">타임코드로 맞추기</option></select><button id="autoSync" class="button cyan-outline full"><svg><use href="#i-wave"/></svg>자동 싱크 실행</button><p id="syncSummary" class="sync-summary">폴더를 불러온 후 자동으로 시작합니다.</p></section>
+        <section class="setting-section"><div class="section-title"><h3>수동 싱크</h3><span class="mini-tag">FINE TUNE</span></div><p class="field-help">영상과 파형을 보며 미세 조정하세요.<br><b>+ 값은 카메라 영상을 뒤로 이동합니다.</b></p><div id="manualControls" class="manual-controls"><div class="settings-empty">카메라를 불러오면<br>프레임 단위로 조정할 수 있어요.</div></div></section>
+        <section class="setting-section compact-section"><button id="preparePreview" class="button ghost full"><svg><use href="#i-refresh"/></svg>미리보기 영상 준비</button><p class="field-help">원본 재생이 어려운 코덱은 호환 영상으로 변환합니다. 추출에는 원본을 사용합니다.</p></section>
+        <button id="goExport" class="button primary full">배치 정하고 추출하기 <span>→</span></button>
+      </div>
+      <div id="exportSettings" class="settings-content hidden">
+        <section class="setting-section"><div class="section-title"><h3>화면 배치</h3><span class="mini-tag">LAYOUT</span></div><div class="layout-options"><button class="layout-button active" data-layout="horizontal"><svg><use href="#i-horizontal"/></svg>가로</button><button class="layout-button" data-layout="vertical"><svg><use href="#i-vertical"/></svg>세로</button><button class="layout-button" data-layout="grid"><svg><use href="#i-grid"/></svg>격자</button><button class="layout-button" data-layout="pip"><svg><use href="#i-pip"/></svg>화면 속 화면</button></div><label class="field-label">카메라 순서 <span>첫 번째 카메라가 주 화면</span></label><div id="cameraOrder" class="camera-order"></div></section>
+        <section class="setting-section"><div class="section-title"><h3>추출 구간</h3><button id="setCommonRange" class="text-button small">겹치는 구간 찾기</button></div><select id="overlapSelect" aria-label="모든 카메라가 동시에 촬영한 구간"><option value="">공통 촬영 구간</option></select><div class="range-fields"><label>시작<input id="rangeStart" value="00:00:00.000" inputmode="decimal" aria-label="추출 시작 시각"><button id="startHere" class="text-button small">현재 위치로</button></label><label>끝<input id="rangeEnd" value="00:00:00.000" inputmode="decimal" aria-label="추출 종료 시각"><button id="endHere" class="text-button small">현재 위치로</button></label></div><div class="range-summary"><span>선택 구간</span><b id="rangeDuration">0.000초</b></div><p class="field-help" id="rangeHelp">통합 영상의 빈 촬영 구간은 검은 화면으로 채워집니다.</p></section>
+        <section class="setting-section"><div class="section-title"><h3>추출 설정</h3></div><label for="exportMode" class="field-label">파일 형태</label><select id="exportMode"><option value="combined">통합 영상 · 하나의 MP4</option><option value="individual">개별 영상 · 카메라별 MP4 / ZIP</option><option value="both">통합 + 개별 영상</option></select><label class="field-label" for="aspectRatio">통합 화면 비율</label><select id="aspectRatio"><option value="16:9">16:9 · 일반 화면</option><option value="32:9">32:9 · 가로 카메라 2대</option><option value="9:16">9:16 · 세로 화면</option></select><div class="paired-fields"><label class="field-label">기준 해상도<select id="resolution"><option value="1920x1080">1920 × 1080</option><option value="1280x720">1280 × 720</option><option value="3840x2160">3840 × 2160</option></select></label><label class="field-label">프레임<select id="exportFps"><option value="30">30 fps</option><option value="24">24 fps</option><option value="25">25 fps</option><option value="60">60 fps</option></select></label></div><p id="outputDimensions" class="field-help">통합 영상 크기: 1920 × 1080</p><label class="field-label" for="audioCamera">통합 영상 오디오</label><select id="audioCamera"><option value="none">오디오 없음</option></select><label class="field-label" for="exportFilename">파일 이름</label><input id="exportFilename" value="multicam_sync" placeholder="multicam_sync" maxlength="100"><p class="field-help">개별 영상은 각 카메라의 원본 크기와 오디오를 사용합니다.</p></section>
+        <button id="startExport" class="button primary full"><svg><use href="#i-download"/></svg>선택 구간 추출하기</button>
+        <div id="exportList" class="export-list"></div>
+      </div>
+    </aside>
+  </main>
+  <footer class="app-footer"><span id="footerStatus"><i></i>준비 완료</span><span>동기화하고. 확인하고. 내보내세요.</span><span id="projectStats">MULTICAM SYNC / LOCAL</span></footer>
+  <div id="jobPanel" class="job-panel hidden" role="status" aria-live="polite"><div class="job-top"><span class="spinner"></span><strong id="jobTitle">처리 중</strong><span id="jobPercent">0%</span><button id="cancelJob" class="icon-button" aria-label="현재 작업 취소" title="작업 취소"><svg><use href="#i-close"/></svg></button></div><div class="progress-track"><div id="jobProgress"></div></div><p id="jobMessage">잠시 기다려 주세요.</p></div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <dialog id="folderDialog"><form id="folderForm"><div class="dialog-heading"><span class="dialog-icon"><svg><use href="#i-folder"/></svg></span><button type="button" id="closeFolder" class="icon-button" aria-label="닫기"><svg><use href="#i-close"/></svg></button></div><span class="eyebrow">START A NEW SYNC</span><h2>촬영 폴더를 불러오세요.</h2><p>CAM A, CAM B 등 카메라 폴더가 들어 있는<br>상위 폴더를 선택하세요. 하위 폴더까지 검색합니다.</p><label class="field-label" for="folderPath">폴더 경로</label><div class="folder-input-row"><input id="folderPath" required placeholder="C:\촬영 영상\프로젝트" autocomplete="off"><button id="browseFolder" type="button" class="button secondary">찾아보기</button></div><div class="folder-example"><span>촬영 프로젝트</span><span>├ CAM A <small>영상 01.mp4, 영상 02.mp4…</small></span><span>└ CAM B <small>영상 01.mp4, 영상 02.mp4…</small></span></div><label class="checkbox-label"><input type="checkbox" id="syncAfterImport" checked>불러온 후 자동으로 싱크 맞추기</label><div class="dialog-actions"><button id="dialogSample" class="button ghost" type="button">첨부 샘플 폴더</button><button type="submit" class="button primary"><svg><use href="#i-folder"/></svg>불러오기</button></div></form></dialog>
+  <input type="file" id="projectFile" accept=".json,application/json" class="hidden">
+  <script src="/static/app.js"></script>
+</body>
+</html>
