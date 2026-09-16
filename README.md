@@ -2,6 +2,8 @@
 
 A Windows program that plays footage from multiple cameras in sync, then exports it as a combined layout or as per-camera clips in MP4.
 
+<img src="figs/first_fig.png">
+
 ## Running
 
 **Fully extract** the distribution ZIP, then double-click `실행.cmd` (Run). The workspace opens in your default browser. No separate Python or FFmpeg installation is required. All video processing happens locally on this PC. `실행.vbs` is an alternative launcher that starts without a console window.
@@ -9,6 +11,8 @@ A Windows program that plays footage from multiple cameras in sync, then exports
 Keep the `runtime`, `bin`, and `static` folders together with the Python files in the same location. Closing the browser window does not stop the program; launching it again reopens the same workspace. Use **Quit Program** at the top of the screen to exit.
 
 ## 1. Load a Shoot Folder
+
+<img src="figs/main_fig.png">
 
 Click **Select Folder** or paste a folder path. Select the parent folder that contains all cameras. The bundled example is `multi-cam sample video/Three_CAM`; **Load Three_CAM sample** on the welcome screen opens it from that relative path.
 
@@ -76,6 +80,8 @@ The program consists of `app.py`, `media_engine.py`, and `export_engine.py` in t
 
 여러 카메라의 영상을 같은 시점에 재생하고, 화면을 합치거나 카메라별로 잘라 MP4로 저장하는 Windows 프로그램입니다.
 
+<img src="figs/first_fig.png">
+
 ## 실행
 
 배포 ZIP을 **모두 압축 해제**한 뒤 `실행.cmd`를 더블클릭하세요. 기본 브라우저에 작업 화면이 열립니다. Python이나 FFmpeg를 따로 설치할 필요가 없습니다. 영상 처리는 이 PC에서 이루어집니다. `실행.vbs`는 검은 창 없이 시작하는 대체 실행 파일입니다.
@@ -83,6 +89,8 @@ The program consists of `app.py`, `media_engine.py`, and `export_engine.py` in t
 `runtime`, `bin`, `static` 폴더와 같은 위치의 Python 파일을 함께 보관하세요. 브라우저 창만 닫으면 프로그램은 실행 중이며, 다시 실행하면 같은 작업 화면이 열립니다. 화면 위의 **프로그램 종료**로 종료할 수 있습니다.
 
 ## 1. 촬영 폴더 불러오기
+
+<img src="figs/main_fig.png">
 
 **폴더 선택**을 누르거나 폴더 경로를 붙여넣습니다. 여러 카메라를 담은 상위 폴더를 선택하세요. 저장소에 포함된 예시는 `multi-cam sample video/Three_CAM`이며, 시작 화면의 **Three_CAM 샘플 불러오기**로 상대경로에서 바로 열 수 있습니다.
 
