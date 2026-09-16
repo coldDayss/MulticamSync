@@ -12,7 +12,7 @@ Keep the `runtime`, `bin`, and `static` folders together with the Python files i
 
 ## 1. Load a Shoot Folder
 
-<img src="figs/main_fig.png">
+<img src="figs/main_fig.png" width="500" height="500"/>
 
 Click **Select Folder** or paste a folder path. Select the parent folder that contains all cameras. The bundled example is `multi-cam sample video/Three_CAM`; **Load Three_CAM sample** on the welcome screen opens it from that relative path.
 
@@ -80,7 +80,7 @@ The program consists of `app.py`, `media_engine.py`, and `export_engine.py` in t
 
 여러 카메라의 영상을 같은 시점에 재생하고, 화면을 합치거나 카메라별로 잘라 MP4로 저장하는 Windows 프로그램입니다.
 
-<img src="figs/first_fig.png">
+<img src="figs/first_fig.png" width="500" height="500"/>
 
 ## 실행
 
@@ -90,7 +90,7 @@ The program consists of `app.py`, `media_engine.py`, and `export_engine.py` in t
 
 ## 1. 촬영 폴더 불러오기
 
-<img src="figs/main_fig.png">
+<img src="figs/main_fig.png" width="500" height="500"/>
 
 **폴더 선택**을 누르거나 폴더 경로를 붙여넣습니다. 여러 카메라를 담은 상위 폴더를 선택하세요. 저장소에 포함된 예시는 `multi-cam sample video/Three_CAM`이며, 시작 화면의 **Three_CAM 샘플 불러오기**로 상대경로에서 바로 열 수 있습니다.
 
