@@ -2,7 +2,7 @@
 
 A Windows program that plays footage from multiple cameras in sync, then exports it as a combined layout or as per-camera clips in MP4.
 
-<img src="figs/first_fig.png">
+<img src="figs/first_fig.png" width="500" height="500"/>
 
 ## Running
 
